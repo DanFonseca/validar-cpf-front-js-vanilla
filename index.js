@@ -1,9 +1,7 @@
 //const URL="https://java-api-spring-bot.herokuapp.com/validacpf?cpf="
-const URL ="http://localhost:8080/validacpf?cpf="
+const URL ="https://itau-turma6c-daniel-freitas.herokuapp.com/validacpf?cpf="
 function validar(){
-	debugger
 	var txtCPF = document.getElementById("txtCpf").value;
-	console.log("conteudo", txtCPF);
 	fetch(URL+txtCPF)
 	   .then(res=>res.json())
 	   .then(res=>verifica(res))
@@ -11,8 +9,6 @@ function validar(){
 
 
 function verifica(res){
-
-
 	if(res.status =="conteudo_vazio"){
 		console.log("conteudo vazio");
 		document.getElementById("msgResult").innerHTML = "<h3 class=\"valido\"> Conteúdo vazio </h3>";
